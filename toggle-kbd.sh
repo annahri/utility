@@ -14,9 +14,9 @@ fi
 
 if grep -q "slave  keyboard" <<< "$kbd_string"; then
     # keyboard is off
-    notify-send "Laptop Keyboard: OFF"
+    notify-send -t 1000 "Laptop Keyboard: OFF"
     xinput float $kbd_id
 else
-    notify-send "Laptop Keyboard: ON"
+    notify-send -t 1000 "Laptop Keyboard: ON"
     xinput reattach $kbd_id $master_id
 fi
